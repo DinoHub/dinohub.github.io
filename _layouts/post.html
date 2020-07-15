@@ -84,7 +84,6 @@ post_class: post-template
             </div>
             {% endif %}
 
-            Site base URL is "{{ site.baseurl }}"
             <!-- Post Date -->
             <p>
             <small>
@@ -95,7 +94,6 @@ post_class: post-template
                 </small>
             </p>
 
-            Site base URL is "{{site.baseurl}}"
             <!-- Post Categories -->
             <div class="after-post-cats">
                 <ul class="tags mb-4">
@@ -110,7 +108,6 @@ post_class: post-template
             <!-- End Categories -->
 
             <!-- Post Tags -->
-            Site base URL is "{{ site.baseurl }}"
             <div class="after-post-tags">
                 <ul class="tags">
                     {% assign sortedTags = page.tags | sort %}
@@ -122,7 +119,10 @@ post_class: post-template
                 </ul>
             </div>
             <!-- End Tags -->
-            Site base URL is "{{site.baseurl}}/{{page.previous.url}}" 
+            Site Relative URL is "{{relative_url}}" 
+            Site Absolute URL is "{{absolute_url}}"             
+            Site  URL is "{{ site.url}}"                         
+            
             <!-- Prev/Next -->
             <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
             {% if page.previous.url %}
