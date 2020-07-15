@@ -2,8 +2,8 @@
 layout: post
 title:  "Training Deep Learning Algorithms using Kubernetes on the AI Platform"
 author: jadle
-categories: [kubernetes,aiplatform]
-tags: [chatbot,Movie Dialogs]
+categories: [tutorial]
+tags: [chatbot,Movie Dialogs,kubernetes,aiplatform]
 featured: false
 hidden: false
 ---
