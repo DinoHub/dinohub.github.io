@@ -2,8 +2,9 @@
 layout: post
 title:  "Training a Open Source ML/DL model on AI Platform (Kubernetes) - Part II"
 author: jax
-categories: [kubernetes,aiplatform]
+categories: [tutorial]
 image: ../assets/images/KubernetesTraining.png
+tags: [kubernetes,aiplatform]
 description: 'Training a Open Source ML/DL model on AI Platform (Kubernetes) - Part II'
 featured: false
 hidden: false
