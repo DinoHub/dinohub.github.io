@@ -4,7 +4,7 @@ title: "DinoHub"
 description: "TechBlog for Dinos"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
-baseurl: /
+baseurl: dinohub.github.io/
 google_analytics: 'UA-172682310-1'
 disqus: 'jax79sg-github-io'
 mailchimp-list: ''
