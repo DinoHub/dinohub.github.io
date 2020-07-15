@@ -6,7 +6,7 @@ categories: [kubernetes,aiplatform]
 image: ../assets/images/KubernetesTraining.png
 description: 'Training a Open Source ML/DL model on AI Platform (Kubernetes) - Part II'
 featured: false
-hidden: true
+hidden: false
 ---
 # Training a Open Source ML/DL model on AI Platform (Kubernetes) - Part II.
 
