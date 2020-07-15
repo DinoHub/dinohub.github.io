@@ -7,7 +7,7 @@ tags: [red, yellow]
 image: ../assets/images/KubernetesTraining.png
 description: 'Training a Open Source ML/DL model on AI Platform (Kubernetes) - Part I'
 featured: false
-hidden: true
+hidden: false
 ---
 
 # Training a Open Source ML/DL model on AI Platform (Kubernetes) - Part I.
