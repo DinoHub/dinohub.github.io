@@ -4,7 +4,7 @@ title:  "NewtonFool"
 author: cvappstore
 categories: [CV]
 tags: [Adversarial Attack, NewtonFool]
-image: https://pbs.twimg.com/profile_images/563716194323025921/OthWJnik_400x400.png
+image: assets/images/stop_sign.jpg
 description: 'An adversarial attack on deep learning image classification models'
 featured: false
 hidden: false
