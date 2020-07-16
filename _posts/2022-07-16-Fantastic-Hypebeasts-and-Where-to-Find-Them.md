@@ -23,7 +23,7 @@ For this project, images were collected to use as training data for the hypebeas
 
 The collected images were then filtered to keep only pictures that contained humans. For this task, a pretrained ResNet50 with ImageNet weights was used. All images were fed through yolov3, an object detector and image classifier that stand for “you only look once”. Only those with 85% and above confidence of the presence of a human were kept to be used for training and testing. After filtering, around 12,700 hypebeast and 5,300 non- hypebeast images were kept. They were each split in an 8:1:1 ratio to be training, validation, and testing sets respectively.
 
-<img src=https://loving-lovelace-c9b120.netlify.com/images/blog/hypebeast_example.jpeg />
+<img src="https://loving-lovelace-c9b120.netlify.com/images/blog/hypebeast_example.jpeg" />
 
 # Training the model
 The images were first passed through a data generator to augment the data slightly and produce a more rounded training set. The training images were subject to shear up to 0.2, zoom up to 0.2, and flipped horizontally. All images were also resized to fit the target size of 224 by 224 pixels, and pixel values were rescaled to range between 0 and 1. The data generator modified the images and fed them into the model for training in batches of size 32.
