@@ -50,6 +50,22 @@ authors:
     web: https://github.com/levan92
     twitter: https://twitter.com/0E_92
     description: "Bbt Adventurer"
+  cvappstore:
+    name: cvappstore
+    display_name: cvappstore
+    gravatar: ''
+    email: ''
+    web: ''
+    twitter: ''
+    description: ''
+  jinming:
+    name: Jin
+    display_name: Jin Ming
+    gravatar: ''
+    email: jinmingteo95@gmail.com
+    web: https://github.com/jinmingteo
+    twitter: ''
+    description: "Learning Machine"
   
 
 # Plugins
