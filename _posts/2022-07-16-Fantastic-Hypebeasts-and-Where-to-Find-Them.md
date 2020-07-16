@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Fantastic Hypebeasts and Where to Find Them"
-author: cvappstore
+author: kayne_ivan_west
 categories: [CV]
 tags: [hypebeast, classification]
 image: https://loving-lovelace-c9b120.netlify.app/images/blog/hypebeast_example5.jpeg
