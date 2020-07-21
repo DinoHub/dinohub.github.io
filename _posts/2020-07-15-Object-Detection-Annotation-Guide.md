@@ -7,12 +7,10 @@ tags: [Object Detection, Annotation]
 image: assets/images/od_annot_guide/od_annot_cover.png
 description: 'Guide to annotating for an object detection task'
 featured: false
-hidden: true
+hidden: false
 ---
 
 ## 1. Introduction
-
-<div style="text-align: justify">
 
 This blog post is meant for annotators who are embarking on their journey to help label data for object detection. We hope to briefly introduce you to the computer vision task and *your* task as an annotator.
 
@@ -24,10 +22,8 @@ In our work, we want to train an AI model to perform this task of object detecti
 
 Just to clear up some jargons up front:
 
- - **Annotation = Labels**, to "teach" our AI models the ground-truths.
- - **Classes = Categories** of objects defined by us, for example, Cats, Dogs, Horses, etc.  
-
-</div>
+- **Annotation = Labels**, to "teach" our AI models the ground-truths.
+- **Classes = Categories** of objects defined by us, for example, Cats, Dogs, Horses, etc.  
 
 ## 2. Format
 
@@ -73,6 +69,8 @@ You will definitely face cases where the object of interest is partially block b
 <img src="../assets/images/od_annot_guide/part_occlusion.png" alt="partial occlusion" width="300"/>
 
 </div>
+
+</br>
 
 ## 4. Tracking in Video Data
 
