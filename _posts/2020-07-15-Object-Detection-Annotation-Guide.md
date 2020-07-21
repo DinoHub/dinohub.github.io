@@ -4,11 +4,10 @@ title:  "Object Detection Annotation Guide"
 author: levan
 categories: [CV]
 tags: [Object Detection, Annotation]
-image: assets/images/11.jpg
+image: assets/images/od_annot_guide/od_annot_cover.png
 description: 'Guide to annotating for an object detection task'
-featured: true
+featured: false
 hidden: true
-rating: 4.5
 ---
 
 <div style="text-align: justify">
