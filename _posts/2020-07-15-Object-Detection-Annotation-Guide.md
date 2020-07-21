@@ -10,8 +10,6 @@ featured: false
 hidden: true
 ---
 
-<div style="text-align: justify">
-
 ## 1. Introduction
 
 This blog post is meant for annotators who are embarking on their journey to help label data for object detection. We hope to briefly introduce you to the computer vision task and *your* task as an annotator.
@@ -87,5 +85,3 @@ You will still need to check through every frame afterwards. And of course, as y
 ## 5. Using the annotation tool
 
 In DH, we leverage primarily on the open-source annotation tool [**CVAT**](https://github.com/opencv/cvat). We will install the tool for you on your computer, so your main reading will be to study their user guide so you know how to use the tool effectively: [CVAT User Guide](https://github.com/opencv/cvat/blob/develop/cvat/apps/documentation/user_guide.md). Please take some time to read this!
-
-</div>
