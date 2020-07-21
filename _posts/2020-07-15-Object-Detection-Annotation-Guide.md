@@ -12,6 +12,8 @@ hidden: true
 
 ## 1. Introduction
 
+<div style="text-align: justify">
+
 This blog post is meant for annotators who are embarking on their journey to help label data for object detection. We hope to briefly introduce you to the computer vision task and *your* task as an annotator.
 
 Object detection is a computer vision task of localising and classifying objects of interest &mdash; There are some objects I want to find in an image frame.. where are they, and what are they?
@@ -24,6 +26,8 @@ Just to clear up some jargons up front:
 
  - **Annotation = Labels**, to "teach" our AI models the ground-truths.
  - **Classes = Categories** of objects defined by us, for example, Cats, Dogs, Horses, etc.  
+
+</div>
 
 ## 2. Format
 
