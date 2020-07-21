@@ -5,14 +5,14 @@ author: levan
 categories: [CV]
 tags: [Object Detection, Annotation]
 image: assets/images/od_annot_guide/od_annot_cover.png
-description: 'Guide to annotating for an object detection task'
+description: "Guide to annotating for an object detection task"
 featured: false
 hidden: false
 ---
 
-## 1. Introduction
-
 This blog post is meant for annotators who are embarking on their journey to help label data for object detection. We hope to briefly introduce you to the computer vision task and *your* task as an annotator.
+
+## 1. Introduction
 
 Object detection is a computer vision task of localising and classifying objects of interest &mdash; There are some objects I want to find in an image frame.. where are they, and what are they?
 
