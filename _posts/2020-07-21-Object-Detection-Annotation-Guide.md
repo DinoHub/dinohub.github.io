@@ -74,7 +74,7 @@ You will definitely face cases where the object of interest is partially block b
 
 ## 4. Tracking in Video Data
 
-<div class=text-justify>
+<div style="text-align: justify">
 
 Here, we will introduce a complementary task that we may require you to do on top of drawing bbs and labelling their classes, which may also aid in easing your annotation efforts.
 
