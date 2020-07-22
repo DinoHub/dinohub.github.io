@@ -74,8 +74,6 @@ You will definitely face cases where the object of interest is partially block b
 
 ## 4. Tracking in Video Data
 
-<div style="text-align: justify">
-
 Here, we will introduce a complementary task that we may require you to do on top of drawing bbs and labelling their classes, which may also aid in easing your annotation efforts.
 
 Very often, our data can be sequential frames from a video. Meaning that as you traverse through the images, you will "see" a video. We can make use of this temporal aspect to ease the load of annotation as well. Imagine a car driving across 100 video frames from left to right &mdash; instead of drawing a bb for 100 times on the 100 frames, we can make use of "tracking".
@@ -85,8 +83,6 @@ One way of doing this tracking is through *interpolation*. To illustrate, imagin
 You will still need to check through every frame afterwards. And of course, as you can imagine, this will not always work accurately for every frame and you will still have to adjust the locations slightly for some of the frames.
 
 *Will update further with more details/illustrations.*
-
-</div>
 
 ## 5. Using the annotation tool
 
