@@ -2,10 +2,10 @@
 layout: post
 title:  "Training a Open Source ML/DL model on AI Platform (Kubernetes) - Part I"
 author: jax
-categories: [AI Plaform]
+categories: [AI Platform]
 tags: [kubernetes,aiplatform]
 image: ../assets/images/KubernetesTraining.png
-description: 'Walk you through on how to submit your custom training job to the AI Platform'
+description: "Walk you through on how to submit your custom training job to the AI Platform"
 featured: false
 hidden: false
 ---
