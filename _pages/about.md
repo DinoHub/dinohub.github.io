@@ -2,7 +2,7 @@
 layout: page
 title: DinoHub Blog For the Dinos
 permalink: /about
-comments: true
+comments: false
 ---
 
 <div class="row justify-content-between">
