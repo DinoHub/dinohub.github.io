@@ -6,7 +6,7 @@ categories: [jekyll]
 image: assets/images/11.jpg
 description: 'Short description of how the header works'
 featured: true
-hidden: false
+hidden: true
 rating: 4.5
 ---
 
