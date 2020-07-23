@@ -41,3 +41,5 @@ The weights for the trained model were saved in a .h5 file to be used for classi
 ![](https://loving-lovelace-c9b120.netlify.com/images/blog/lame_cat.png)
 
 ![](https://loving-lovelace-c9b120.netlify.com/images/blog/hype_cat.png)
+
+<sup>*work done as an intern at DH</sup>
