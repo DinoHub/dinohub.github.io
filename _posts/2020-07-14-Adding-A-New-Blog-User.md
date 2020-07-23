@@ -6,7 +6,7 @@ categories: [jekyll]
 image: assets/images/11.jpg
 description: 'New blogger? You must read this then!'
 featured: true
-hidden: false
+hidden: true
 rating: 4.5
 ---
 Edit _config.yml and add your profile under the authors node like follows.
