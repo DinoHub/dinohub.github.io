@@ -6,7 +6,7 @@ categories: [jekyll]
 image: assets/images/11.jpg
 description: 'How to create a new post?'
 featured: true
-hidden: false
+hidden: true
 rating: 4.5
 ---
 
