@@ -2,7 +2,7 @@
 layout: post
 title:  "Let's test spoilers"
 author: sal
-categories: [Jekyll]
+categories: [jekyll]
 image: assets/images/12.jpg
 featured: false
 hidden: false

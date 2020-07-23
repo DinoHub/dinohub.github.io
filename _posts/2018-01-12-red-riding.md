@@ -2,7 +2,7 @@
 layout: post
 title:  "How to disply indent"
 author: jax
-categories: [Jekyll]
+categories: [jekyll]
 image: assets/images/1.jpg
 ---
 
