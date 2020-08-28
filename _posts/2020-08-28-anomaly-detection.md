@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Flight Trajectory Anomaly Detection with LSTM Classifier & QuickBundles"
-author: dhinterns
+author: Digital Hub Interns
 categories: [datascience]
 tags: [rnn, anomalydetection]
 image: ../assets/images/flight_anomaly_detection/cover.jpg
