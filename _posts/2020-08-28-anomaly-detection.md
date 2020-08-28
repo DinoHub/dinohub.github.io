@@ -4,7 +4,7 @@ title:  "Flight Trajectory Anomaly Detection with LSTM Classifier & QuickBundles
 author: RyanTan
 categories: [datascience]
 tags: [rnn, anomalydetection]
-image: assets/images/11.jpg
+image: ../assets/images/flight_anomaly_detection/cover.jpg
 description: 'Anomaly Detection using supervised LSTM'
 featured: False
 hidden: False
@@ -78,7 +78,7 @@ I then fed in multiple unseen trajectory types (not in training set) to see what
 >* Confidence mean: 98.783%
 >* Confidence S.D.: 5.895%
 
-![Jakarta and Sydney](JSS.png)
+![Jakarta and Sydney](../assets/images/flight_anomaly_detection/JSS.png)
 
 The LSTM was obviously not senstive enough to anomalies. Such high confidence scores for anomalies were more or less consistent across all anomaly trajectory types. I removed Sydney from the training set, and the LSTM classified Surabaya flights as Jakarta flights with even higher confidence (99.998%)! The LSTM is definitely tuning itself to identify flights as Jakarta flights, but there aren't enough examples that are similar enough to Jakarta flights but **not** Jakarta flights to teach it what truly constitutes a Jakarta flight and what does not.
 
@@ -132,7 +132,7 @@ Other times still, just bad.
 > Statistics:
 > * Irrelevant since non-anomalous distances were higher than anomalous ones
 
-![](AL.png)
+![](../assets/images/flight_anomaly_detection/AL.png)
 
 As you can see, **this method was unreliable, especially for longer flights as longer flights tend to have multiple distinct routes, and the distance from a cluster member to its centroid could get quite large, to the point where a cluster centroid could be closer to one of the more deviant routes of another flight type than to one its own more deviant routes.**
 
@@ -146,7 +146,7 @@ A more refined version is to run QuickBundles within each trajectory type, and t
 ### What is QuickBundles?
 Really quickly, QuickBundles is an iterative algorithm that takes a set of constant-length series data, and separates them into groups based on a specified distant metric. It first shuffles the dataset so that the order of processing is different each time, then it takes each data sample, one at a time, and compares it to pre-existing clusters. If there is a cluster whose centroid lies within a specified distance threshold of itself, it gets assigned to the cluster, and a new centroid for that cluster is computed. Otherwise, it becomes a cluster of its own. Because the number of clusters increase over time, the number of comparisons per iteration increase over time, and QuickBundles becomes, at worst, a O(N<sup>2</sup>) algorithm. But, it's still super fast, so long as you don't use DTW!
 
-![](QBExplanation.png)
+![](../assets/images/flight_anomaly_detection/QBExplanation.png)
 
 ### Approach
 1) **Preprocess**: Preprocess as per the descriptions in the "Data Pipeline" subsection (same as for LSTM input)
