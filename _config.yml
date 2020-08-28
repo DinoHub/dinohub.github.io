@@ -82,6 +82,14 @@ authors:
     web:  https://github.com/cshikai
     twitter: ''
     description: "Data Scientist"
+   dhinterns:
+    name: Digital Hub Interns
+    display_name: Digital Hub Interns
+    gravatar: ''
+    email: ''
+    web:  ''
+    twitter: ''
+    description: "Collective archive of all the innovative work done by our interns at Digital Hub"
   
 
 # Plugins
