@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Flight Trajectory Anomaly Detection with LSTM Classifier & QuickBundles"
-author: cshikai
-categories: [jekyll]
+author: RyanTan
+categories: [datascience]
 tags: [rnn, anomalydetection]
 image: assets/images/11.jpg
 description: 'Anomaly Detection using supervised LSTM'
@@ -153,19 +153,19 @@ Really quickly, QuickBundles is an iterative algorithm that takes a set of const
 2) **Split**: 
      * 80% of the data gets used to build the subclusters with QuickBundles
      * 20% of the data is compared against the subcluster centroids to generate a distribution of non-anomaly shortest distance measures
-![](Building.png)
-![](Characterizing.png)
+![](../assets/images/flight_anomaly_detection/Building.png)
+![](../assets/images/flight_anomaly_detection/Characterizing.png)
 3) **Anomaly Detection**: 
    1) Unseen data is preprocessed the same way as before
    2) Flight is fed into LSTM for classification
    3) If confidence < arbitrary threshold confidence, flag as anomaly, else:
    4) Flight is compared against subclusters of predicted trajectory type, to obtain shortest distance measure.
-      ![](Test1.png)
+      ![](../assets/images/flight_anomaly_detection/Test1.png)
    5) If shortest distance measure > threshold distance, flag as anomaly, else non-anomaly. *To determine threshold distance, we either:
       1) Calculate the point of intersection between the distribution of non-anomaly shortest distance measures and the distribution of anomaly shortest distance measures for any particular trajectory type, or...
-         ![](Test2.png)
+         ![](../assets/images/flight_anomaly_detection/Test2.png)
       2) Take it to be the distance at some arbitrary percentile (set to 95<sup>th</sup> percentile) of the distribution of non-anomaly shortest distance measures for any particular trajectory type. The following results are based on this method.
-         ![](Test3.png)
+         ![](../assets/images/flight_anomaly_detection/Test3.png)
    
 
 ### Results
@@ -211,9 +211,9 @@ Flag rates for the 23 non-anomaly trajectory types (false positives):
 > 
 > ****: Mumbai and Dubai flights overlapped considerably, and have high deviance, resulting in high mean shortest distance measures.
 
-![](HSGHN.png)
+![](../assets/images/flight_anomaly_detection/HSGHN.png)
 
-![](DM2.png)
+![](../assets/images/flight_anomaly_detection/DM2.png)
 
 Summary:
 --------
@@ -228,4 +228,4 @@ The fact that this method reliably performs badly when giving it non-anomalous-s
 
 This **model is also relatively transparent** because the only "black box" is the classification portion, which for that matter, isn't too much of a black box either. The other parts of the model reflect physical characteristics that we humans can understand. It is also **easy to add your own filters** because it simply involves adding histograms to the already existing distance histograms and adding a filter (more and that in the FLAG ANALYZER portion below).
 
-<sup>*Work done by Ryan Tan as an intern at DH</sup>
+<sup>*Work done by [Ryan Tan](https://github.com/RyanRTJJ) as an intern at DH</sup>
