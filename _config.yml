@@ -74,6 +74,14 @@ authors:
     web: ''
     twitter: ''
     description: ''
+  cshikai:
+    name: cshikai
+    display_name: Kai
+    gravatar: b790bb64fd6c4ad8b4e9ab598f4d7cc3
+    email: chongshikai@gmail.com
+    web:  https://github.com/cshikai
+    twitter: ''
+    description: "Data Scientist"
   
 
 # Plugins
