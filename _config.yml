@@ -10,7 +10,6 @@ disqus: 'dinohub-github-io'
 mailchimp-list: ''
 include: ["_pages"]
 permalink: /:title/
-
 # Authors
 authors:
   sal:
@@ -82,7 +81,7 @@ authors:
     web:  https://github.com/cshikai
     twitter: ''
     description: "Data Scientist"
-   dhinterns:
+  dhinterns:
     name: DigitalHubInterns
     display_name: DigitalHubInterns
     gravatar: ''
