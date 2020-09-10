@@ -49,10 +49,15 @@ If you have done any web application before, you would probably have used jquery
 Flask is pretty straight forward. It is design to be light-weight and you add extensions as you develop instead of them providing everything to you in the case of django. I prefer flask but your usage might vary.
 
 ### Structure? No Structure!
-As mentioned, flask is meant to be lightweight and no folder structure is provided by default. For micro-services doing just a single task, you might not even have more than 100 lines of code, creating a folder structure might just be a waste of time. However when you start adding features to your prototype, you might start to scratch you head on how to organize your code. Thus, I have included a recommended folder structure.
+As mentioned, flask is meant to be lightweight and no folder structure is provided by default. For micro-services doing just a single task, you might not even have more than 100 lines of code, creating a folder structure might just be a waste of time. However when you start adding features to your prototype, you might start to scratch your head on how to organize your code. Thus, I have included a recommended folder structure.
 
 ### Use Gunicorn and Nginx
 The server that comes with flask when you `flask run` is only for development. You might face issues using it during deployment when the number of requests/second gets higher etc. Gunicorn is a server that can serve your flask python code and it is production grade so use that instead. However, it might not be the most efficient for static files. No worries, you always have Nginx to do that for you. In fact, the react codes are compiled into static files and served using a docker container with Nginx, and the docker container for the backend server is already using Gunicorn!
+
+### Database migration
+Database migration is to database schema as what git is to codes. Database migration lets you keep track of the changes you made to the schema of a database. The changes you make for the database on your development machine can be easily replicated on your colleague or deployment machine. The starter code has this feature added but I have abstracted this. I figured that for prototyping purposes, you might not even have a database, or could just delete the whole database since there are not much data on it.
+
+To be in control on this, refer to the official docs of [Flask-migrate](https://flask-migrate.readthedocs.io/en/latest/) to learn how. Basically there are upgrade commands like `flask db upgrade`, roll back commands like `flask db downgrade` and many more.
 
 # Conclusion
 Once again, I am no expert, so if you ever get to use this starter code, please let me know what you think! I intend to continue improving this article and the repo.
