@@ -89,6 +89,14 @@ authors:
     web:  ''
     twitter: ''
     description: "Collective archive of all the innovative work done by our interns at Digital Hub"
+  ernestlwt:
+    name: ernestlwt
+    display_name: ernestlwt
+    gravatar: '21fdd617b75fc3ef81038c9dae82bd28'
+    email: 'ernestlimwoonteng@gmail.com'
+    web:  'https://github.com/ernestlwt'
+    twitter: ''
+    description: "Level 3 Beginner"
   
 
 # Plugins
