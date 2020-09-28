@@ -74,19 +74,19 @@ The handcrafted features were then used to predict which disorder label the utte
 
 The 5 high data demographics in this result are the 5 demographics that had the highest number of single utterances after data processing of around 1000 utterances. For example, healthy_male_41-65 is a demographic with this number of utterances, allowing for more training data.
 
-The baseline results indicate that the model is doing little better than randomly guessing which disorder label should be given to an unknown utterance. This is consistent across multiple models like Random Forests, Support Vector Machines and XGBoost. From this, it can be inferred that the voice and audio characteristics of these 6 labels are very similar to one another. This is because the classifiers used are unable to learn from handcrafted features that according to research, represent key characteristics of the voice. However, the hyperparameters of the models were not tuned so doing this may improve the baseline results.
+The baseline results indicate that the model is doing little better than randomly guessing which disorder label should be given to an unknown utterance. This is consistent across multiple models like Random Forests, Support Vector Machines and XGBoost. However, the hyperparameters of the models were not tuned so doing this may improve the baseline results.
 
 ## Deep-learned Features with RawNet
 To improve on the baseline results, a deep learning model called RawNet is used. The original purpose of RawNet was for speaker verification with raw audio waveforms as input. The picture below illustrates the input and output of the model as well as its architecture.
 
 ![](../assets/images/2020-08-29-Pathological-voice-classification-with-deep-learned-embeddings-from-voice-recordings/rawnet_architecture.png)
 
-However, this project has adapted it for pathological voice classification by treating each demographic (e.g male, dysphonia, 41-65) as speakers. The rationale for this was because based on current research, the different demographics should have distinct characteristics from one another that would enable RawNet to distinguish between the different demographics. For example, male individuals would have a lower pitch than female individuals while individuals with a voice disorder would have a higher jitter and shimmer than healthy individuals.
+This project has adapted it for pathological voice classification by treating each demographic (e.g male, dysphonia, 41-65) as speakers. The rationale for this was because based on current research, the different demographics should have distinct characteristics from one another that would enable RawNet to distinguish between the different demographics. For example, male individuals would have a lower pitch than female individuals while individuals with a voice disorder would have a higher jitter and shimmer than healthy individuals.
 
 ### Verifying the performance of RawNet
 Before adapting RawNet for classifying pathological voices, the original research was verified by replicating the research. This was done by training the RawNet model on voxCeleb, a dataset of speech recordings from celebrities. From the visualisation of the embeddings produced from the evaluation recordings by RawNet after training, it can be seen that all the speakers are in their own distinct clusters. Thus, it can be concluded that the original research was indeed successful in its purpose.
 
-![](../assets/images/2020-08-29-Pathological-voice-classification-with-deep-learned-embeddings-from-voice-recordings/voxceleb_eval_embedding.png)
+![](../assets/images/2020-08-29-Pathological-voice-classification-with-deep-learned-embeddings-from-voice-recordings/voxceleb_eval_embeddings.png)
 
 ### Final Results
 The classification with the RawNet model was conducted with the same scenarios as the baseline results
@@ -117,7 +117,7 @@ Additionally, the TSNE plot below visualising the 5 high-data demographics show 
 Furthermore, the red dots representing the healthy male demographic are clearly separated from most of the other dots which are from female voice recordings, indicating that the model could perhaps distinguish gender. Further analysis with several visualisations of male vs female for each disorder confirmed this hypothesis. Examples of these visualisations are below where male vs female for healthy individuals is on the left and male vs female for individuals with recurrence palsy is on the right.
 
 ![](../assets/images/2020-08-29-Pathological-voice-classification-with-deep-learned-embeddings-from-voice-recordings/gender_healthy.png)
-![](../assets/images/2020-08-29-Pathological-voice-classification-with-deep-learned-embeddings-from-voice-recordings/gender_recurrance_palsy.png)
+![](../assets/images/2020-08-29-Pathological-voice-classification-with-deep-learned-embeddings-from-voice-recordings/gender_recurrence_palsy.png)
 
 #### Healthy vs Disorder, Disorder vs Disorder Visualisations
 Finally, the visualisations of embeddings for healthy vs disorder and disorder vs disorder scenarios also support the earlier hypotheses on the performance of the RawNet model. In the TSNE visualisations below, each figure shows the embeddings from a healthy vs disorder scenario, in particular, healthy vs recurrence palsy for males and healthy vs functional dysphonia for females. The different disorders are marked by different colors.
