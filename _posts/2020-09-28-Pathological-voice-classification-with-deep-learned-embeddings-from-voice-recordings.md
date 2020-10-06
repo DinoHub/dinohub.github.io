@@ -46,7 +46,9 @@ Some of these features are utilised in the creation of the baseline model and wi
 Deep-learned features are features extracted from the audio recordings by a deep neural network (DNN). Recent research has experimented with this approach since deep-learned features might be a better representation of an individual's voice as compared to handcrafted features. There is no guarantee that a handcrafted feature is a good discriminator for pathological voices while deep-learned features are specifically extracted by the DNN to distinguish different voice disorders. Other than RawNet, there are other open-source deep learning models for extracting deep-learned features. These are X-vector DNNs and Pretrained Audio Neural Networks (PANNs).
 
 ## Datasets
-There are a number of open-source pathological voice datasets available. These datasets are the Saarbruecken Voice Database (SVD), VOICED database and SLI-Database. Other databases such as the Massachusetts Eye and Ear Infirmary Database and the TalkBank pathology databases are unfortunately not open-source. In this project, the data used is obtained from the SVD because the data comes in .wav files, making it easier to start experimenting with the data. In all, all samples from 6 different disorder labels were downloaded and used for this project. This data can be downloaded here: https://drive.google.com/file/d/1P6Pip3ZWzKfG74p0EuWwSguIsOyAUFD_/view?usp=sharing
+There are a number of open-source pathological voice datasets available. These datasets are the Saarbruecken Voice Database (SVD), VOICED database and SLI-Database. Other databases such as the Massachusetts Eye and Ear Infirmary Database and the TalkBank pathology databases are unfortunately not open-source. In this project, the data used is obtained from the SVD because the data comes in .wav files, making it easier to start experimenting with the data. In all, all samples from 6 different disorder labels were downloaded and used for this project. Within these 6 disorders, the data was split into different demographics, separated by gender and age group. There are two genders, male and female. There are three age groups, 1 to 40, 41 to 65 and 66 and up. An example of a demographic is dysphonia_female_1_40.
+
+This data can be downloaded here: https://drive.google.com/file/d/1P6Pip3ZWzKfG74p0EuWwSguIsOyAUFD_/view?usp=sharing
 
 1. Dysphonia
 2. Functional Dysphonia
@@ -55,8 +57,14 @@ There are a number of open-source pathological voice datasets available. These d
 5. Recurrence Palsy
 6. Healthy
 
+There are 17521 files in the entire dataset. However, a majority of these files come from healthy voices (~8200 files) with some disorder demographics only having less than 100 files. Therefore, the dataset was processed in two different ways. In both methods, a 60-20-20 train-val-eval split was used.
+
+First, all files from the same voice disorder (e.g dysphonia) were group together irregardless of age or gender. This created a dataset of ~5400 files with ~900 files for each voice disorder. For a 60-20-20 split, this resulted in a training set of ~3240 files and 540 files per voice disorder. The validation and evaluation set each had ~1080 files with 180 files per voice disorder.
+
+Second, 5 high data demographics with at least 1000 utterances were selected (e.g healthy_male_41_65) to view the effects that additional data could have when modelling. With a 60-20-20 split, this results in a training set of 3000 files and 600 files per demographic. The validation and evaluation set each had 1000 files and 200 files per voice disorder. The quantity of data for each of these 5 demographics is not much higher than the quantity of data for each disorder in the first distribution. However, relatively, there is a much greater quantity of data on each demographic since each disorder in the first distribution contained 6 different demographics.
+
 ## Baseline Model
-Before experimenting with RawNet, a baseline model was created to determine how difficult it would be to classify pathological voices with handcrafted features. Before extracting these handcrafted features from the voice recordings, Auditok was used to extract single utterances from the overall recording. An example of a single utterance is 'ooo' or 'aaa' and they were extracted to their own .wav files as each original voice recording had multiple utterances with silences in between, which would affect the values of the features extracted.
+Before experimenting with RawNet, a baseline model was created to determine how difficult it would be to classify pathological voices with handcrafted features. Before extracting these handcrafted features from the voice recordings, Auditok was used to extract single utterances from the overall recordings of the SVD dataset. An example of a single utterance is 'ooo' or 'aaa' and they were extracted to their own .wav files as each original voice recording had multiple utterances with silences in between, which would affect the values of the features extracted.
 
 openSMILE was then used to extract from each utterance, the handcrafted features below.
 
@@ -72,24 +80,24 @@ The handcrafted features were then used to predict which disorder label the utte
 2. Multi-class classification (5 high-data demographics): ~0.31 F1-score
 3. 1 vs 1 classification of disorder classes: ~0.55 F1-score
 
-The 5 high data demographics in this result are the 5 demographics that had the highest number of single utterances after data processing of around 1000 utterances. For example, healthy_male_41-65 is a demographic with this number of utterances, allowing for more training data.
+The 5 high data demographics in this result are the 5 demographics that had the highest number of single utterances after data processing of around 1000 utterances. For example, healthy_male_41_65 is a demographic with this number of utterances, allowing for more training data.
 
 The baseline results indicate that the model is doing little better than randomly guessing which disorder label should be given to an unknown utterance. This is consistent across multiple models like Random Forests, Support Vector Machines and XGBoost. However, the hyperparameters of the models were not tuned so doing this may improve the baseline results.
 
 ## Deep-learned Features with RawNet
-To improve on the baseline results, a deep learning model called RawNet is used. The original purpose of RawNet was for speaker verification with raw audio waveforms as input. The picture below illustrates the input and output of the model as well as its architecture.
+To improve on the baseline results, a deep learning model called RawNet is used. The original purpose of RawNet was for speaker verification with raw audio waveforms as input. To achieve their goal of speaker verification, the researchers used a cosine similarity classifier as the last layer of RawNet. This classifier indicated how similar two embeddings from different recordings were similar to one another. The picture below illustrates the input and output of the model as well as its architecture.
 
 ![](../assets/images/2020-08-29-Pathological-voice-classification-with-deep-learned-embeddings-from-voice-recordings/rawnet_architecture.png)
 
 This project has adapted it for pathological voice classification by treating each demographic (e.g male, dysphonia, 41-65) as speakers. The rationale for this was because based on current research, the different demographics should have distinct characteristics from one another that would enable RawNet to distinguish between the different demographics. For example, male individuals would have a lower pitch than female individuals while individuals with a voice disorder would have a higher jitter and shimmer than healthy individuals.
 
 ### Verifying the performance of RawNet
-Before adapting RawNet for classifying pathological voices, the original research was verified by replicating the research. This was done by training the RawNet model on voxCeleb, a dataset of speech recordings from celebrities. From the visualisation of the embeddings produced from the evaluation recordings by RawNet after training, it can be seen that all the speakers are in their own distinct clusters. Thus, it can be concluded that the original research was indeed successful in its purpose.
+Before adapting RawNet for classifying pathological voices, the original research was verified by replicating the research. This was done by training the RawNet model on voxCeleb, a dataset of speech recordings from celebrities. From the visualisation of the embeddings produced from the evaluation recordings (unseen by the model during training) by RawNet after training, it can be seen that all the speakers are in their own distinct clusters. Thus, it can be concluded that the original research was indeed successful in its purpose.
 
 ![](../assets/images/2020-08-29-Pathological-voice-classification-with-deep-learned-embeddings-from-voice-recordings/voxceleb_eval_embeddings.png)
 
 ### Final Results
-The classification with the RawNet model was conducted with the same scenarios as the baseline results
+The classification with the RawNet model was conducted using the same scenarios as the baseline which utilised the SVD dataset mentioned under Datasets.
 
 1. Multi-class classification (6 disorder classes): ~0.26 F1-score
 2. Multi-class classification (5 high-data demographics): ~0.46 F1-score
