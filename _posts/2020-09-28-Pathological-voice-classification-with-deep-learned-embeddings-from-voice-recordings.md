@@ -13,7 +13,7 @@ rating: 4.0
 
 
 # Pathological voice classification with deep-learned embeddings from voice recordings
-<sup>*Work done by [Gabriel Ng](https://uk.linkedin.com/in/gabriel-shen-han-ng-43152a180) as an intern at DH</sup>
+<sup>*Work done by [Gabriel Ng](https://uk.linkedin.com/in/gabriel-shen-han-ng-43152a180) as an intern under Kah Siong at DH</sup>
 
 Since the covid-19 pandemic began, the significance of pathological voice classification has skyrocketed, with many countries and hospital scrambling to find an efficient means of testing their people. Given the need for specialised equipment and skilled staff to conduct a covid-19 swab test properly, it is no surprise that organisations are searching for another means of testing. A potentially more efficient method could be leverage machine learning to classify pathological voices from voice recordings. With such testing, it will be possible to diagnose people in real-time, saving on manpower. Even if such testing alone cannot serve as a diagnosis, it can be utilised to reduce false positive and negative rates of the true test. This project explores the different machine learning techniques for achieving the goal of pathological voice classification and proposes the use of a deep-learning model called RawNet.
 
