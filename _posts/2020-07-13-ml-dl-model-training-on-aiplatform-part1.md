@@ -88,11 +88,11 @@ s3 = boto3.resource('s3',
 
 def s3_download_file(localfile,bucket,s3path):
     print("S3 Download s3://"+bucket+"/" + s3path + " to " + localfile )
-    s3.Bucket(bucket).download_file(s3path,localfile)
+    s3.Bucket(bucket).download_file(os.path.join(s3path, localfile), localfile)
     
 def s3_upload_file(localfile,bucket,s3path):
     print("S3 Uploading " + localfile + " to s3://"+bucket + s3path+localfile)
-    s3.Bucket(bucket).upload_file(localfile,s3path+localfile)
+    s3.Bucket(bucket).upload_file(localfile, os.path.join(s3path, localfile) + localfile)
     
 def s3_upload_folder(folder, bucket,s3path):
     
