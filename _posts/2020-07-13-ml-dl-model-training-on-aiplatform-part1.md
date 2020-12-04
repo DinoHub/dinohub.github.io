@@ -92,7 +92,7 @@ def s3_download_file(localfile,bucket,s3path):
     
 def s3_upload_file(localfile,bucket,s3path):
     print("S3 Uploading " + localfile + " to s3://"+bucket + s3path+localfile)
-    s3.Bucket(bucket).upload_file(localfile, os.path.join(s3path, localfile) + localfile)
+    s3.Bucket(bucket).upload_file(localfile,s3path+localfile)
     
 def s3_upload_folder(folder, bucket,s3path):
     
