@@ -86,13 +86,21 @@ s3 = boto3.resource('s3',
                     config=Config(signature_version= os.environ['signature_version']),
                     region_name= os.environ['region_name'])
 
-def s3_download_file(localfile,bucket,s3path):
-    print("S3 Download s3://"+bucket+"/" + s3path + " to " + localfile )
-    s3.Bucket(bucket).download_file(os.path.join(s3path, localfile), localfile)
+def s3_download_file(localpathandfilename,bucket,s3pathandfilename):
+    '''
+      localpathandfilename example: '/workspace/example.zip'
+      s3pathandfilename example: 'cat_dog/example.zip'
+    '''
+    print("S3 Download s3://"+bucket+"/" + s3pathandfilename + " to " + localpathandfilename)
+    s3.Bucket(bucket).download_file(s3pathandfilename, localpathandfilename)
     
-def s3_upload_file(localfile,bucket,s3path):
-    print("S3 Uploading " + localfile + " to s3://"+bucket + s3path+localfile)
-    s3.Bucket(bucket).upload_file(localfile,s3path+localfile)
+def s3_upload_file(localpathandfilename,bucket,s3pathandfilename):
+    '''
+      localpathandfilename example: '/workspace/example.zip'
+      s3pathandfilename example: 'cat_dog/example.zip'
+    '''
+    print("S3 Uploading " + localpathandfilename + " to s3://"+bucket + s3pathandfilename)
+    s3.Bucket(bucket).upload_file(localpathandfilename, s3pathandfilename)
     
 def s3_upload_folder(folder, bucket,s3path):
     
