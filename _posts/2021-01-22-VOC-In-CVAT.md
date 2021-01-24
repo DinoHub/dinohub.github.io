@@ -10,15 +10,16 @@ featured: false
 hidden: false
 ---
 
-# What we learnt from working with PASCAL VOC format in CVAT
+# Working with CVAT
 
-## Preface
+## 'Free' conversions
 
-In our journey to train/harvest a good person detector (look for us to learn more), we had to collate a multiple datasets into the same format (our favourite COCO format). One approach we took to do this was to load a dataset into CVAT and dump the annotations out in COCO format. It allowed us to look through the annotations for sanity check/modifications and also provided "free conversion".
+In our journey to train/harvest a good person detector (look for us to learn more), we collected multiple datasets of different formats. We had to collate them into the same format for downstream model training purposes (our favourite COCO format). One approach we took was to load each dataset into CVAT (https://github.com/openvinotoolkit/cvat)[https://github.com/openvinotoolkit/cvat] and dump the annotations out in COCO format. It allowed us to look through the annotations for sanity check/modifications and also provided "free conversion" from the various formats.
 
 Here I document the lessons I learnt from this, trivial it may be, but with the hope that the next person do not need to go through what I went through.
 
-## The Dataset
+## Lessons learnt
+### Not everyone follow the right format
 
 The KAIST Multispectral Pedestrian Dataset provides annotations in their own format, but also provided some xml files in PASCAL VOC format.
 
@@ -26,9 +27,9 @@ Or so I thought. The XML files were not in exactly the right format to be upload
 
 Here is a good [link](https://github.com/openvinotoolkit/cvat/tree/develop/cvat/apps/dataset_manager/formats#pascal-voc-import) to CVAT's documentation on what it expects in Pascal VOC annotation imports, as well as other formats it accepts and dumps out in.
 
-## Path Issues
+### Path Issues
 
-Firstly, the filename value in the XMLs need to excatly match the filenames of the images uploaded to the CVAT task. If I uploaded `set08_V000_I00859.jpg`, then in my `.xml` file it needs to reflect the same filename:
+Firstly, the filename value in the XMLs need to exactly match the filenames (case-sensitive) of the images uploaded to the CVAT task. If I uploaded `set08_V000_I00859.jpg`, then in my `.xml` file it needs to reflect the same filename:
 
 ```xml
 <annotation>
@@ -39,8 +40,7 @@ Firstly, the filename value in the XMLs need to excatly match the filenames of t
 
 ```
 
-## Object Information Format
-
+### Object Information Format
 The dataset I was working with gave the bounding box information as follows:
 
 ```xml
@@ -80,6 +80,8 @@ After investigation, what CVAT actually expects (else it will throw an error dur
 </object>
 ...
 ```
+
+
 So yes, the following things to take note:
 
 1. Bounding Box: Needs to be `xmin`, `xmax`, etc. instead of `x`,`y`,`w`,`h`.
