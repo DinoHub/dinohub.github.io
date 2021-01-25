@@ -6,8 +6,8 @@ categories: [CV]
 tags: [Object Detection, Annotation]
 image: assets/images/voc-in-cvat/cvat-upload.jpg
 description: "What we learnt from working with PASCAL VOC format in CVAT"
-featured: false
-hidden: false
+featured: true
+hidden: true
 ---
 
 # Working with CVAT
