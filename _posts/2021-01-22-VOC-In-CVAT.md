@@ -7,14 +7,14 @@ tags: [Object Detection, Annotation]
 image: assets/images/voc-in-cvat/cvat-upload.jpg
 description: "What we learnt from working with PASCAL VOC format in CVAT"
 featured: true
-hidden: true
+hidden: false
 ---
 
 # Working with CVAT
 
 ## 'Free' conversions
 
-In our journey to train/harvest a good person detector (look for us to learn more), we collected multiple datasets of different formats. We had to collate them into the same format for downstream model training purposes (our favourite COCO format). One approach we took was to load each dataset into CVAT (https://github.com/openvinotoolkit/cvat)[https://github.com/openvinotoolkit/cvat] and dump the annotations out in COCO format. It allowed us to look through the annotations for sanity check/modifications and also provided "free conversion" from the various formats.
+In our journey to train/harvest a good person detector (look for us to learn more), we collected multiple datasets of different formats. We had to collate them into the same format for downstream model training purposes (our favourite COCO format). One approach we took was to load each dataset into [CVAT](https://github.com/openvinotoolkit/cvat) and dump the annotations out in COCO format. It allowed us to look through the annotations for sanity check/modifications and also provided "free conversion" from the various formats.
 
 Here I document the lessons I learnt from this, trivial it may be, but with the hope that the next person do not need to go through what I went through.
 
