@@ -10,8 +10,6 @@ featured: true
 hidden: false
 ---
 
-# Hung up over pixels
-
 ## Background
 
 Many tend to ask what is the minimum number of pixels of targets we need for detection, and this is a difficult answer to give in today's world.

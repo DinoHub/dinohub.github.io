@@ -10,8 +10,6 @@ featured: true
 hidden: false
 ---
 
-# Time to Detect Objects: Exploiting Temporal Information in Videos for Object Detection
-
 ## Background
 
 Currently, when performing object detection on videos, we often just apply a regular image detector (e.g. R-FCN, SSD, [YOLO](https://pjreddie.com/darknet/yolo/)) on each frame of a video. This does work, but it does not exploit the temporal dimension of videos — videos are more than just a sequence of images, but also a sequence of related images. Furthermore, image recognition on videos may perform worse as they face unique challenges like motion blur and occlusion in certain frames, which are less frequent occurrences in images.
