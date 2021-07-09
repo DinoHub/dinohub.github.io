@@ -6,7 +6,7 @@ categories: [CV]
 tags: [Object Detection]
 image: assets/images/hung-up-over-pixels/pixels.svg
 description: "Hung up over pixels"
-featured: false
+featured: true
 hidden: false
 ---
 
@@ -40,4 +40,8 @@ If we really need to gather some form of initial sensing, I guess what we can ge
 
 ## Conclusion
 
-End of day, of course we could just pluck some logical numbers from out of the air and put it in the project document, but really, it's not meaningful to ask this. Get the **data** sorted out and annotate the **ground-truth labels**, then we can talk performance metrics in terms of accuracy, and how it trades off with target sizes under the deployment conditions.  
+End of day, of course we could just pluck some logical numbers from out of the air and put it in the project document, but really, it's not meaningful to ask this. Get the **data** sorted out and annotate the **ground-truth labels**, then we can talk performance metrics in terms of accuracy, and how it trades off with target sizes under the deployment conditions.
+
+## Epilogue
+
+You might get the sense that we've emphasized on data quite a bit over here, well, because it is that important. The state of ML research might revolve around pushing that few 0.1% on academic benchmark datasets through proposing new models/training strategies, but really, in real world applications, a data-centric approach is what will bring you significant improvements to your model performance. But that's a story for another time ;)
