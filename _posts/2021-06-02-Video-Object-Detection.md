@@ -26,11 +26,12 @@ Click below for Demo Video!
 ## VOD Overview
 
 We can thus look towards object detection methods built specifically for videos. There are a few main categories of networks we can look at:
-    • Post-processing methods (methods that can be applied on top of regular image object detections to improve accuracy)
-    • Optical flow
-    • Tracking
-    • Recurrent NNs / LSTM
-    • Attention
+
+- Post-processing methods (methods that can be applied on top of regular image object detections to improve accuracy)
+- Optical flow
+- Tracking
+- Recurrent NNs / LSTM
+- Attention
 
 ![Figure 1: Overview of VOD networks from each category](../assets/images/vod/overview.jpg)
 
@@ -104,5 +105,4 @@ Credits to the paper [A Review of Video Object Detection: Datasets, Metrics and 
 
 ## Annex
 
-Sharing slides: https://docs.google.com/presentation/d/1eC2Jv0QiWzoS5cq1WdvBMwcx8ARMyEQh1dnsL8hY-U0/edit?usp=sharing
-
+[Sharing slides](https://docs.google.com/presentation/d/1eC2Jv0QiWzoS5cq1WdvBMwcx8ARMyEQh1dnsL8hY-U0/edit?usp=sharing)
